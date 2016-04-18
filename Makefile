@@ -1,6 +1,8 @@
+PROJECT     := $(shell basename $(CURDIR))
 SRCDIR      := src
 BUILDDIR    := build
-TARGET      := bin/co-cluster
+TARGET      := bin/$(PROJECT)
+INFO        := $(PROJECT)
 
 SOURCES     := $(wildcard $(SRCDIR)/*.cpp)
 OBJECTS     := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.cpp=.o))
@@ -26,4 +28,7 @@ clean:
 tests:
 	$(CC) $(CFLAGS) test/tester.cpp $(INC) $(LIB) -o bin/tester
 
-.PHONY: clean
+info:
+	@echo $(PROJECT)
+
+.PHONY: clean test info
