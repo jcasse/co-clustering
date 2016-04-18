@@ -11,7 +11,7 @@ columns of a two-dimensional data matrix.
 ### Installation
 
 ```sh
-$ git clone <git-repo-url> co-clustering
+$ git clone <git-repo-url>
 $ cd co-clustering
 $ make
 ```
